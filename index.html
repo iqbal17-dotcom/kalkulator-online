@@ -8,12 +8,10 @@
 body {
   margin: 0;
   height: 100vh;
-  font-family: 'Comic Sans MS';
-
+  font-family: 'Comic Sans MS', Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-
   background: url("https://i.pinimg.com/1200x/e8/44/87/e84487c2c1b3711c3a3e7eafdc0e2095.jpg");
   background-size: cover;
   background-position: center;
@@ -26,15 +24,17 @@ body {
   width: 300px;
   border-radius: 22px;
   box-shadow: 0 0 30px rgba(31, 59, 134, 0.9);
+  border: 3px solid rgb(32, 37, 117);
 }
 
 /* judul */
 .title {
   text-align: center;
-  color: white;
+  color: #ffffff;
   margin-bottom: 12px;
   font-size: 20px;
-  text-shadow: 0 0 8px rgba(255,255,255,0.8);
+  font-weight: bold;
+  text-shadow: 0 0 12px rgba(255,255,255,1);
 }
 
 /* layar */
@@ -48,6 +48,10 @@ body {
   border: none;
   margin-bottom: 12px;
   box-sizing: border-box;
+
+  background: #111827;   /* GELAP */
+  color: #ffffff;        /* HASIL PUTIH */
+  font-weight: bold;
 }
 
 /* grid tombol */
@@ -63,15 +67,16 @@ button {
   border-radius: 12px;
   border: none;
   background: #1f1f1f;
-  color: white;
+  color: #ffffff;
+  font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 0 6px #7a6cff;
-  transition: 0.2s;
+  box-shadow: 0 0 8px rgb(119, 97, 247);
+  transition: 0.2s ease;
 }
 
 button:hover {
   background: #f5f5f5;
-  color: black;
+  color: #000000;
   transform: scale(1.05);
 }
 
@@ -95,11 +100,13 @@ button:hover {
 
 <div class="calculator">
 
-  <!-- 🕊️ JUDUL DENGAN MERPATI KIRI & KANAN -->
+  <!-- 🕊️ JUDUL -->
   <div class="title">🕊️ Kalkulator Online 🕊️</div>
 
+  <!-- LAYAR -->
   <input type="text" id="display" disabled>
 
+  <!-- TOMBOL -->
   <div class="buttons">
     <button onclick="backspace()">⌫</button>
     <button onclick="clearDisplay()">C</button>
@@ -124,6 +131,7 @@ button:hover {
     <button class="zero" onclick="append('0')">0</button>
     <button onclick="append('.')">.</button>
   </div>
+
 </div>
 
 <script>
